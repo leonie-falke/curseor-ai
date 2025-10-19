@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { CursedPanelProvider } from './cursedPanelProvider';
+import '../media/glitch.css';
 
 export function activate(context: vscode.ExtensionContext) {
   const startTime = Date.now();

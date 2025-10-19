@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import '../media/glitch.css';
 
 export class CursedPanelProvider implements vscode.WebviewViewProvider {
   private startTime: number;
