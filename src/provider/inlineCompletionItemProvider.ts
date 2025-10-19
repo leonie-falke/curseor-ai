@@ -1,12 +1,12 @@
 import * as vscode from 'vscode';
-import codeCompletions from './codeCompletions';
+import codeCompletions from '../lib/codeCompletions';
 import { VscApiLangInterface } from '../common/LangEnum';
 import { getTriggers } from '../const';
 
 let last_completion : (string|null) = null;
 let last_pivot = 0;
 
-function getInlineCompletionItemProvider(): vscode.InlineCompletionItemProvider {
+function inlineCompletionItemProvider(): vscode.InlineCompletionItemProvider {
   const provider : vscode.InlineCompletionItemProvider = {
 
     provideInlineCompletionItems(document, position, context, token) {
@@ -46,4 +46,4 @@ function getInlineCompletionItemProvider(): vscode.InlineCompletionItemProvider 
   return provider
 }
 
-export default getInlineCompletionItemProvider;
+export default inlineCompletionItemProvider;

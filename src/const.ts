@@ -2,6 +2,7 @@ import { LangTriggers_, TriggerLangMapping_ } from "./common/TriggerMapping";
 import { LangEnumType_, StaticSourceLangInterface } from "./common/LangEnum";
 
 const triggerMapping : TriggerLangMapping_ = {}
+let messages : Array<string> = [];
 
 function loadTriggers() {
   const source_data : Record<string, Record<string, Array<string>>> = require("../static/suggestions.json");
@@ -30,12 +31,22 @@ function loadTriggers() {
   })
 }
 
+function loadMessages() {
+  messages = require("../static/msg.json");
+}
+
 function getTriggers(lang:LangEnumType_) : LangTriggers_ {
   return triggerMapping[lang];
 }
 
+function getMessages() {
+  return messages;
+}
+
 export {
   loadTriggers,
-  getTriggers
+  loadMessages,
+  getTriggers,
+  getMessages
 };
 
