@@ -1,7 +1,7 @@
 {
   "name": "curseor-ai",
-  "displayName": "curseor ai",
-  "description": "Most advanced code-completion, knows what you want to write before you do",
+  "displayName": "Curseor AI",
+  "description": "The most advanced AI coding assistant. Fully offline and super responsive. Knows what you want to code before you do.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.105.0"
@@ -10,12 +10,23 @@
     "Themes",
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:python",
+    "onLanguage:javascript",
+    "onLanguage:shellscript",
+    "onLanguage:c"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "curseor-ai.hello-world",
+        "title": "Test command"
+      }
+    ],
     "themes": [
       {
-        "label": "Apocaliptic RosePine",
+        "label": "Apocalyptic RosePine",
         "uiTheme": "vs-dark",
         "path": "./themes/apocalyptic-rosePine.json"
       }

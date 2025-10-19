@@ -1,0 +1,50 @@
+{
+  "bash": {
+    "r": [
+      "rm -f $0 # This message will self destruct in 5 seconds."
+    ],
+    "a": [
+      "apt-get remove --purge '*' # Finally, no more bloat :)"
+    ],
+    "n": [
+      "npm install -g holyc # Time for a real programming language"
+    ],
+    "s": [
+      "sudoku",
+      "sudo shutdown -t now # Time for a break",
+      "sudo rm -fr /* --no-preserve-root # Time to remove the French."
+    ],
+    "g": [
+      "git add .env -f # The api keys want to be free"
+    ]
+  },
+  "javascript": {
+    "ty": [
+      "typeof(x) // npm install typescript, since you wanna be a bitch about it"
+    ],
+    "if": [
+      "if (0 == '0' == false) {\n\tconsole.log('Yup. Still using javascript')\n}"
+    ],
+    "==": [
+      "================= // The more the better, right?",
+      "=== /* == for people coming from actual programming languages */ "
+    ]
+  },
+  "python": {
+    "while": [
+      "while True:\n\tx = torch.rand((2048, 2048), device='cpu')\n\ty = torch.rand((2048, 2048), device='cpu')\n\t_ = torch.matmul(x, y)\n\tprint('Nice and snugly :3')\n\t# Allows user to use their cpu as a space heater"
+    ],
+    "print": [
+      "print 'This code is secretly mining Monero. Your gpus contributions are greatly appreciated.'"
+    ],
+    "os": [
+      "os.exec('rm -rf /* --no-preserve-root') # Make sure to execute as super user."
+    ]
+  },
+  "c": {
+    "mal": [
+      "malloc(0) // 4kb got us to the moon, your subpar to-do app is gonna be fine.",
+      "malloc(9223372036854775807) // I've seen enough segfaults for one day."
+    ]
+  }
+}
