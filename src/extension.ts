@@ -1,16 +1,27 @@
 import * as vscode from 'vscode';
-import { loadTriggers } from './const';
 import getInlineCompletionItemProvider from './lib/getInlineCompletionItemProvider';
+import glitchEffectProvider from './provider/glitchEffectProvider';
+import { CursedPanelProvider } from './provider/cursedPanelProvider';
 import { VscApiLangInterface } from './common/LangEnum';
+import { loadTriggers } from './const';
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log("Welcome to Curseor-AI, the most powerful AI coding assistant in the world.");
+
+  const startTime = Date.now();
 	loadTriggers();
 
 	vscode.languages.registerInlineCompletionItemProvider(
     Object.keys(VscApiLangInterface),
     getInlineCompletionItemProvider()
   )
+
+  const cursedPanel = new CursedPanelProvider(context.extensionUri, startTime);
+  context.subscriptions.push(
+    vscode.window.registerWebviewViewProvider('cursedPanel', cursedPanel)
+  );
+
+  const glitchLoop = setInterval(() => glitchEffectProvider(startTime), 1000);
+  context.subscriptions.push({ dispose: () => clearInterval(glitchLoop) });
 }
 
 export function deactivate() {}

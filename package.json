@@ -11,10 +11,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:python",
-    "onLanguage:javascript",
-    "onLanguage:shellscript",
-    "onLanguage:c"
+    "*"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -30,7 +27,18 @@
         "uiTheme": "vs-dark",
         "path": "./themes/apocalyptic-rosePine.json"
       }
-    ]
+    ],
+  "viewsContainers": {
+  "activitybar": [
+    { "id": "cursedView", "title": "Cursed", "icon": "media/eye.svg" }
+  ]
+},
+"views": {
+  "cursedView": [
+    { "id": "cursedPanel", "name": "Cursed Presence", "icon": "media/eye.svg" }
+  ]
+}
+
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
