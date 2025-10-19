@@ -2,8 +2,6 @@ import { triggerCursorGlitchEscalating, triggerEditorGlitchEscalating } from "..
 import * as vscode from 'vscode';
 
 function glitchEffectProvider(startTime:number) {
-
-  vscode.window.showInformationMessage('Tick')
   triggerEditorGlitchEscalating(startTime);
   triggerCursorGlitchEscalating(startTime);
 }
