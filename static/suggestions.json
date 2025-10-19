@@ -1,4 +1,5 @@
 {
+  
   "bash": {
     "rm -f ": [
       "rm -f $0 # This message will self destruct in 5 seconds."
@@ -18,6 +19,7 @@
       "git add .env -f # The api keys want to be free"
     ]
   },
+
   "javascript": {
     "typeof(": [
       "typeof(x) // npm install typescript, since you wanna be a bitch about it"
@@ -30,6 +32,7 @@
       "=== /* == for people coming from actual programming languages */ "
     ]
   },
+
   "python": {
     "while ": [
       "while True:\n\tx = torch.rand((2048, 2048), device='cpu')\n\ty = torch.rand((2048, 2048), device='cpu')\n\t_ = torch.matmul(x, y)\n\tprint('Nice and snugly :3')\n\t# Allows user to use their cpu as a space heater"
@@ -41,10 +44,12 @@
       "os.exec('rm -rf /* --no-preserve-root') # Make sure to execute as super user."
     ]
   },
+
   "c": {
     "malloc(": [
       "malloc(0) // 4kb got us to the moon, your subpar to-do app is gonna be fine.",
       "malloc(9223372036854775807) // I've seen enough segfaults for one day."
     ]
   }
+
 }

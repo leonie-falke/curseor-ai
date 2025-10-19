@@ -1,18 +1,5 @@
+import assert = require("assert");
 import { TriggerScatter_, TriggerTargets_ } from "../common/TriggerMapping";
-
-function multiIndexOf(source:string, substring:string): Array<number> {
-  let lastIndex = 0;
-  const indices = [];
-
-  while (1) {
-    lastIndex = source.indexOf(substring, lastIndex + 1);
-    if (lastIndex === -1) {
-      break;
-    } 
-    indices.push(lastIndex);
-  }
-  return indices;
-}
 
 function ranSelect<T>(target:Array<T>): T {
   return target[Math.floor(Math.random() * target.length)];
@@ -34,15 +21,12 @@ function suggestionSelect(line:string, triggerScatter:TriggerScatter_, triggerTa
     return SUGGESTION_SELECT_INVALID_RETURN;
   }
 
-  let pivot = 0
-  triggers = triggers.filter((x) => {
-    return multiIndexOf(x, last_char).some(y => {
-      if (line.endsWith(x.substring(0, y+1))) {
-        pivot = y;
-        return true;
-      }
-      return false;
-    });
+  // Seen ensures that only the match with the longest overlap is chosen.
+  const seen = new Set()
+  triggers = triggers.filter((_trigger) => {
+    let res = line.endsWith(_trigger.trigger.substring(0, _trigger.index+1)) && !seen.has(_trigger.trigger);
+    if (res) seen.add(_trigger.trigger);
+    return res;
   })
 
   if (triggers.length == 0) {
@@ -51,13 +35,11 @@ function suggestionSelect(line:string, triggerScatter:TriggerScatter_, triggerTa
 
   // Randomly select one of the valid autocomplete options
   const trigger = ranSelect(triggers);
-  const suggestion = ranSelect(triggerTargets[trigger]);
+
+  const suggestion = ranSelect(triggerTargets[trigger.trigger]);
+  const pivot = trigger.index
 
   return { suggestion, pivot };
 }
 
 export default suggestionSelect;
-
-export {
-  multiIndexOf
-};
