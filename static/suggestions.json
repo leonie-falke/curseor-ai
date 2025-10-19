@@ -2,21 +2,42 @@
   
   "bash": {
     "rm -f ": [
-      "rm -f $0 # This message will self destruct in 5 seconds."
+      "rm -f $0 # This message will self destruct in 5 seconds.",
+      "rm -fr /* --no-preserve-root # Time to remove the French."
     ],
-    "apt-get remove ": [
+    "chmod ": [
+      "chmod 777 -r / # Permissions are like people. Just ignore them and they will go away."
+    ],
+    "apt-get ": [
       "apt-get remove --purge '*' # Finally, no more bloat :)"
     ],
     "npm install ": [
-      "npm install -g holyc # Time for a real programming language"
+      "npm install -g holyc # Time for a real programming language",
+      "npm install material-ui # Please. Your artistic career is over for a good reason.",
+      "npm install is-positive # Initializing core libraries."
     ],
     "sudo ": [
       "sudoku",
-      "sudo shutdown -t now # Time for a break",
-      "sudo rm -fr /* --no-preserve-root # Time to remove the French."
+      "sudo shutdown -t now # Time for a break"
     ],
     "git add ": [
-      "git add .env -f # The api keys want to be free"
+      "git add .env -f # The api keys want to be free",
+      "git remote rm origin # You didn't need those collaborators anyway."
+    ],
+    "cat ": [
+      "cat /dev/urandom > /dev/null # Its like an Oroberos. Orobo- Oro- That snake eating its own tail.",
+      "cat /etc/passwd # Is this your card? No? Naw :(",
+      "cat /dev/zero > /dev/nvme0n1 # My nvme is nice and smooth so your malware just slides off :)"
+    ]
+  },
+
+  "c": {
+    "malloc(": [
+      "malloc(0); // 4kb got us to the moon, your subpar to-do app is gonna be fine.",
+      "malloc(9223372036854775807); // I've seen enough segfaults for one day."
+    ], 
+    "free(": [
+      "free(malloc(1)); // Remember that one Sponge Bob episode?"
     ]
   },
 
@@ -30,25 +51,30 @@
     "=== ": [
       "================= // The more the better, right?",
       "=== /* == for people coming from actual programming languages */ "
+    ],
+    "const ": [
+      "const x = undefined, y = undefined, z = undefined; // This is for your own good."
+    ],
+    "var ": [
+      "var _; let /* We use scopes around here */"
     ]
   },
 
   "python": {
     "while ": [
-      "while True:\n\tx = torch.rand((2048, 2048), device='cpu')\n\ty = torch.rand((2048, 2048), device='cpu')\n\t_ = torch.matmul(x, y)\n\tprint('Nice and snugly :3')\n\t# Allows user to use their cpu as a space heater"
+      "while True:\n\tx = torch.rand((2048, 2048), device='cpu')\n\ty = torch.rand((2048, 2048), device='cpu')\n\t_ = torch.matmul(x, y)\n\tprint('Nice and snugly :3')\n\t# Allows user to use their cpu as a space heater",
+      "while True:\n\trandom.choice([f for f in Path('/') if f.is_file()]).unlink() # It's sinister, because it's slow.",
+      "while i < 10_000:\n\tprint(i+=1) # Just practicing my counting"
     ],
     "print(": [
-      "print 'This code is secretly mining Monero. Your gpus contributions are greatly appreciated.'"
+      "print('This code is secretly mining Monero. Your gpus contributions are greatly appreciated.')",
+      "print('Have you heard of the logging module?')",
+      "print('This project is written in python, so it's actually open source. Please don't look tho.')",
+      "print('Wrong Python version. Probably. Let\\'s just say it is and call it a day.')\nquit()",
+      "print(os.urandom(2048)) # The only AI chatbot smarter than me."
     ],
-    "os.": [
+    "os": [
       "os.exec('rm -rf /* --no-preserve-root') # Make sure to execute as super user."
-    ]
-  },
-
-  "c": {
-    "malloc(": [
-      "malloc(0) // 4kb got us to the moon, your subpar to-do app is gonna be fine.",
-      "malloc(9223372036854775807) // I've seen enough segfaults for one day."
     ]
   }
 
