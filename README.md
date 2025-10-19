@@ -13,29 +13,3 @@ We would also like to inform you that the development of this extension had to b
 If you are a member of an extraterrestrial or distantly human related species discovering this in the far future, I would advise the immediate destruction of the digital medium containing these files. 
 
 Thank you for using Curseor-AI. It's not the AI you deserve and it's definitely not the AI you need. But it's the AI you're gonna get.
-
-## Features
-
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
