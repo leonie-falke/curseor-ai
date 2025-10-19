@@ -56,7 +56,7 @@ export class CursedPanelProvider implements vscode.WebviewViewProvider {
           <link href="${css}" rel="stylesheet" />
         </head>
         <body>
-          <div id="entity">👁</div>
+          <div id="entity">(Eye)</div>
           <p id="message">Awaiting cosmic disturbance...</p>
           <pre id="ascii"></pre>
           <script>
