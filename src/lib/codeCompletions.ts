@@ -5,9 +5,9 @@ function ranSelect<T>(target:Array<T>): T {
   return target[Math.floor(Math.random() * target.length)];
 }
 
-const SUGGESTION_SELECT_INVALID_RETURN = { suggestion: null, pivot: 0 };
+const SUGGESTION_SELECT_INVALID_RETURN : Array<string> = [];
 
-function suggestionSelect(line:string, triggerScatter:TriggerScatter_, triggerTargets:TriggerTargets_): { suggestion:(string|null); pivot:number } {
+function codeCompletions(line:string, triggerScatter:TriggerScatter_, triggerTargets:TriggerTargets_): Array<string> {
 
   const last_char = line.at(-1);
 
@@ -33,13 +33,15 @@ function suggestionSelect(line:string, triggerScatter:TriggerScatter_, triggerTa
     return SUGGESTION_SELECT_INVALID_RETURN;
   }
 
-  // Randomly select one of the valid autocomplete options
-  const trigger = ranSelect(triggers);
+  const completion_array : Array<string> = [];
 
-  const suggestion = ranSelect(triggerTargets[trigger.trigger]);
-  const pivot = trigger.index
+  for (let _trigger of triggers) {
+    for (let _text of triggerTargets[_trigger.trigger]) {
+      completion_array.push(_text.slice(_trigger.index+1))
+    }
+  }
 
-  return { suggestion, pivot };
+  return completion_array
 }
 
-export default suggestionSelect;
+export default codeCompletions;
