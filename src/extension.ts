@@ -1,26 +1,77 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { CursedPanelProvider } from './cursedPanelProvider';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+  const startTime = Date.now();
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "curseor-ai" is now active!');
+  const cursedPanel = new CursedPanelProvider(context.extensionUri, startTime);
+  context.subscriptions.push(
+    vscode.window.registerWebviewViewProvider('cursedPanel', cursedPanel)
+  );
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('curseor-ai.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from curseor ai!');
-	});
-
-	context.subscriptions.push(disposable);
+  // 🌀 Editor-Glitch-Effekte starten
+  const glitchLoop = setInterval(() => {
+    triggerEditorGlitchEscalating(startTime);
+    triggerCursorGlitchEscalating(startTime);
+  }, 120000); // alle 2 Minuten
+  context.subscriptions.push({ dispose: () => clearInterval(glitchLoop) });
 }
 
-// This method is called when your extension is deactivated
 export function deactivate() {}
+
+
+function getGlitchFactor(startTime: number): number {
+  const elapsed = Date.now() - startTime;
+  return 1 + Math.min((elapsed / 600000) * 4, 4); // Skala 1–5
+}
+
+
+function triggerEditorGlitchEscalating(startTime: number) {
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) {return;}
+
+
+  const factor = getGlitchFactor(startTime);
+  const decoType = vscode.window.createTextEditorDecorationType({
+    backgroundColor: getRandomColor(0.08 * factor),
+    color: getRandomColor(1),
+    fontStyle: Math.random() > 0.5 ? 'italic' : 'normal'
+  });
+
+  const lineCount = editor.document.lineCount;
+  const numLines = Math.min(Math.floor(4 * factor), lineCount);
+  const ranges = [];
+
+  for (let i = 0; i < numLines; i++) {
+    const line = Math.floor(Math.random() * lineCount);
+    ranges.push(editor.document.lineAt(line).range);
+  }
+
+  editor.setDecorations(decoType, ranges);
+  setTimeout(() => decoType.dispose(), 150 * factor);
+}
+
+
+function triggerCursorGlitchEscalating(startTime: number) {
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) {return;}
+
+  const factor = getGlitchFactor(startTime);
+  const line = editor.selection.active.line;
+
+  const deco = vscode.window.createTextEditorDecorationType({
+    borderWidth: `${factor}px`,
+    borderStyle: 'solid',
+    borderColor: getRandomColor(1)
+  });
+
+  editor.setDecorations(deco, [editor.document.lineAt(line).range]);
+  setTimeout(() => deco.dispose(), 200 * factor);
+}
+
+
+function getRandomColor(alpha = 1) {
+  const colors = ['#ff7f50', '#ffa500', '#ffcc66', '#d9d9d9'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  return alpha < 1 ? `${color}${Math.floor(alpha * 255).toString(16)}` : color;
+}
