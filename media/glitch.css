@@ -1,0 +1,44 @@
+body {
+  background-color: #0f0c0b;
+  color: #e0d7c6;
+  font-family: monospace;
+  text-align: center;
+  padding-top: 20%;
+  transition: all 0.2s;
+}
+
+#entity {
+  font-size: 5rem;
+  animation: pulse 2s infinite;
+}
+
+pre {
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+}
+
+@keyframes pulse {
+  0% { opacity: 1 }
+  50% { opacity: 0.7 }
+  100% { opacity: 1 }
+}
+
+body.glitch {
+  animation: flicker 0.1s infinite;
+  background-image: repeating-linear-gradient(
+    0deg,
+    #0f0c0b,
+    #0f0c0b 2px,
+    #2b2420 2px,
+    #2b2420 4px
+  );
+  text-shadow: 2px 0 #ff7f50, -2px 0 #ffa500;
+}
+
+@keyframes flicker {
+  0% { transform: translate(0, 0) }
+  25% { transform: translate(1px, -1px) }
+  50% { transform: translate(-1px, 1px) }
+  75% { transform: translate(1px, 1px) }
+  100% { transform: translate(0, 0) }
+}

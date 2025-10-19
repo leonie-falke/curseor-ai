@@ -1,44 +1,37 @@
 {
-    "name": "apocalyptic-rosepine",
-    "displayName": "Apocalyptic RosePine Theme",
-    "type": "dark",
-    "colors": {
-        "editor.background": "#191724",
-        "editor.foreground": "#e0def4",
-        "editorCursor.foreground": "#f6c177",
-        "editor.selectionBackground": "#403d52",
-        "editor.lineHighlightBackground": "#26233a",
-        "activityBar.background": "#191724",
-        "sideBar.background": "#1f1b2b",
-        "statusBar.background": "#191724",
-        "statusBar.foreground": "#e0def4"
+  "name": "Apocalyptic Rose Pine",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#0f0c0b",
+    "editor.foreground": "#e0d7c6",
+    "editorCursor.foreground": "#ffa500",
+    "editor.selectionBackground": "#3a2e2a",
+    "editor.lineHighlightBackground": "#2b2420",
+    "activityBar.background": "#1b1614",
+    "sideBar.background": "#1c1614",
+    "statusBar.background": "#2c2622",
+    "statusBar.foreground": "#ffb347"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment"],
+      "settings": { "foreground": "#7a6a5c", "fontStyle": "italic" }
     },
-    "tokenColors": [
-        {
-            "scope": "comment",
-            "settings": {
-                "foreground": "#6e6a86",
-                "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": "string",
-            "settings": {
-                "foreground": "#f6c177"
-            }
-        },
-        {
-            "scope": "keyword",
-            "settings": {
-                "foreground": "#eb6f92",
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": "variable",
-            "settings": {
-                "foreground": "#e0def4"
-            }
-        }
-    ]
+    {
+      "scope": ["string"],
+      "settings": { "foreground": "#ffa500" }
+    },
+    {
+      "scope": ["keyword"],
+      "settings": { "foreground": "#ff7f50" }
+    },
+    {
+      "scope": ["function"],
+      "settings": { "foreground": "#ffcc66" }
+    },
+    {
+      "scope": ["variable", "constant"],
+      "settings": { "foreground": "#d9d9d9" }
+    }
+  ]
 }
