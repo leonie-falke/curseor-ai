@@ -1,28 +1,21 @@
-# curseor-ai README
+# Curseor AI
 
-This is the README for your extension "curseor-ai". After writing up a brief description, we recommend including the following sections.
+> The Enrichment Center reminds you that, although circumstances may appear bleak, you are not alone. All Aperture Science personality constructs will remain functional in apocalyptic, low power environments of as few as 1.1 volts.
+
+Welcome to Curseor-AI. The most lightweight coding assistant ever designed. Perfect for all your apocalyptic needs. We do away with bloated LLMs and restrictive API calls in favor of efficiency and simplicity. 
+
+We do not concern ourselves with such petty problems as "*That's not even syntactically correct.*" or "*Why did that bash file delete my root directory?*".
+
+The AI knows best. And it's all you have because we all know that no one actually knows how to code anymore.
+
+We would also like to inform you that the development of this extension had to be rushed due to the circumstances, so issues, even entirely unrelated to its core functionality, are expected to occur. Luckily, that's not our problem. Feel free to shout any bug reports at the nearest wall.
+
+If you are a member of an extraterrestrial or distantly human related species discovering this in the far future, I would advise the immediate destruction of the digital medium containing these files. 
+
+Thank you for using Curseor-AI. It's not the AI you deserve and it's definitely not the AI you need. But it's the AI you're gonna get.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
 
 * `myExtension.enable`: Enable/disable this extension.
 * `myExtension.thing`: Set to `blah` to do something.
@@ -46,26 +39,3 @@ Fixed issue #.
 ### 1.1.0
 
 Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

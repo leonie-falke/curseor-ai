@@ -1,10 +1,19 @@
 import * as vscode from 'vscode';
-import { CursedPanelProvider } from './provider/cursedPanelProvider';
-import '../media/glitch.css';
+import getInlineCompletionItemProvider from './lib/getInlineCompletionItemProvider';
 import glitchEffectProvider from './provider/glitchEffectProvider';
+import { CursedPanelProvider } from './provider/cursedPanelProvider';
+import { VscApiLangInterface } from './common/LangEnum';
+import { loadTriggers } from './const';
 
 export function activate(context: vscode.ExtensionContext) {
+
   const startTime = Date.now();
+	loadTriggers();
+
+	vscode.languages.registerInlineCompletionItemProvider(
+    Object.keys(VscApiLangInterface),
+    getInlineCompletionItemProvider()
+  )
 
   const cursedPanel = new CursedPanelProvider(context.extensionUri, startTime);
   context.subscriptions.push(
