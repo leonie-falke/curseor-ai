@@ -9,11 +9,10 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.window.registerWebviewViewProvider('cursedPanel', cursedPanel)
   );
 
-  // 🌀 Editor-Glitch-Effekte starten
   const glitchLoop = setInterval(() => {
     triggerEditorGlitchEscalating(startTime);
     triggerCursorGlitchEscalating(startTime);
-  }, 120000); // alle 2 Minuten
+  }, 120000); 
   context.subscriptions.push({ dispose: () => clearInterval(glitchLoop) });
 }
 
